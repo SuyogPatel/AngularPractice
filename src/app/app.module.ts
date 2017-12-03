@@ -3,12 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { CarsModule } from './cars/cars.module';
+import { BikeModule } from './bikes/bike.module';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarsModule,
+    BikeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
