@@ -1,0 +1,9 @@
+<form (ng-submit)="onAddData(d)" #d="ngForm">
+  <h3>Welcome to Baroda Finance</h3>
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" class="form-control" ngModel required>
+  <label for="amount">Amount</label>
+  <input type="text" id="amount" name="amount" class="form-control" ngModel required>
+  <br>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
