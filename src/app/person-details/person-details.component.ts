@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from './person.model';
-
+import { DataService } from '../shared/data.service';
+import { Response } from '@angular/http';
 @Component({
   selector: 'app-person-details',
   templateUrl: './person-details.component.html',
@@ -9,7 +10,7 @@ import { Person } from './person.model';
 export class PersonDetailsComponent implements OnInit {
 
   public persons: Person[];
-  constructor() { }
+  constructor(private dataservice : DataService) { }
 
   ngOnInit() {
     this.persons = [
@@ -17,9 +18,15 @@ export class PersonDetailsComponent implements OnInit {
       new Person("Suyog", 3000)
     ]
 
-
-    console.log(this.persons);
+    this.dataservice.GetData()
+    .subscribe(
+      (response : Response) => { 
+        const person : Person = response.json();
+        console.log(person);
+        if(person){
+        this.persons.push(person);
+        }
+      } 
+    )
   }
-
-
 }

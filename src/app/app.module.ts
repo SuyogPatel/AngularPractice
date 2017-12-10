@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
-import { Routes , RouterModule } from '@angular/router';
+import { Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
-const appRoutes : Routes= [
-  { path : '' , component : HomeComponent},
-  { path : 'persondetails', component : PersonDetailsComponent}
-]
+import { HttpModule } from '@angular/http';
+import { DataService } from './shared/data.service';
+import { AppRouttingModule } from './app.routingmodule';
 
 
 @NgModule({
@@ -23,9 +21,10 @@ const appRoutes : Routes= [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    HttpModule,
+    AppRouttingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
