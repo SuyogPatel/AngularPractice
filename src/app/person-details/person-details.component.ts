@@ -8,7 +8,7 @@ import { Response } from '@angular/http';
   styleUrls: ['./person-details.component.css']
 })
 export class PersonDetailsComponent implements OnInit {
-
+public sendArray : any[] ; 
   public persons: Person[];
   constructor(private dataservice : DataService) { }
 
@@ -28,5 +28,6 @@ export class PersonDetailsComponent implements OnInit {
         }
       } 
     )
+
   }
 }

@@ -9,7 +9,7 @@ export class DataService {
     SendData(data : Person) {
         console.log(data);
 
-    return this.http.patch('https://ng-finance.firebaseio.com/data.json',data);
+    return this.http.post('https://ng-finance.firebaseio.com/data.json',data);
     }
 
     GetData(){
