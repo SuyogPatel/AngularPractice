@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 import { Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './shared/data.service';
 import { AppRouttingModule } from './app.routingmodule';
+import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,10 +22,10 @@ import { AppRouttingModule } from './app.routingmodule';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     AppRouttingModule
   ],
-  providers: [DataService],
+  providers: [DataService,HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

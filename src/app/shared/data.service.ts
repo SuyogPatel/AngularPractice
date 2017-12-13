@@ -1,18 +1,22 @@
 import { Injectable } from "@angular/core";
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Person } from './../person-details/person.model';
-import { Observable } from'Rxjs/Observable';
+import { Observable } from 'Rxjs/Observable';
+import 'rxjs/Rx';
+import { Response } from "@angular/http/src/static_response";
 @Injectable()
 export class DataService {
-    constructor(private http: Http) {
+    public financeData: Person[] = [];
+    constructor(private http: HttpClient) {
     }
-    SendData(data : Person) {
+    SendData(data: Person) {
         console.log(data);
-
-    return this.http.post('https://ng-finance.firebaseio.com/data.json',data);
+        this.financeData.push(data);
+        return this.http.put('https://ng-finance.firebaseio.com/data.json', this.financeData);
     }
 
-    GetData(){
-     return this.http.get('https://ng-finance.firebaseio.com/data.json');
+    GetFinanceData() {
+        console.log('inside getdata');
+        return this.http.get('https://ng-finance.firebaseio.com/data.json');
     }
 }
