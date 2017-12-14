@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       (response) => {
         console.log(response);
         form.reset();
-        alert('Data has been saved successfully');
+        alert('Data has been saved successfully!');
       },
       (error) => console.log(error)
       );

@@ -1,12 +1,12 @@
 <form (ngSubmit)="onUpdateData(d)" #d="ngForm">
   <h3>Welcome to Baroda Finance</h3>
   <div class="form-group">
-    <label for="username">Borrower name/label>
-    <input type="text" id="username" name="username" class="form-control" ngModel required pattern="[a-zA-Z]+[0-9]*" #username = "ngModel">
-    <p *ngIf="!username.valid && username.touched">Please enter a valid username</p>
-    <label for="amount">Amount Given</label>
-    <input type="number" id="amount" name="amount" class="form-control" ngModel required #amount = "ngModel">
-    <p *ngIf="!amount.valid && amount.touched">Please enter a valid username</p>
+    <label for="username">Borrower name</label>
+      <input type="text" id="username" name="username" class="form-control" ngModel required pattern="[a-zA-Z]+[0-9]*" #username="ngModel">
+      <p *ngIf="!username.valid && username.touched">Please enter a valid username</p>
+      <label for="amount">Amount Given</label>
+      <input type="number" id="amount" name="amount" class="form-control" ngModel required #amount="ngModel">
+      <p *ngIf="!amount.valid && amount.touched">Please enter a valid username</p>
   </div>
   <br>
   <button class="btn btn-primary" type="submit" [disabled]="!d.valid">Submit</button>
