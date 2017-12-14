@@ -6,13 +6,15 @@ import 'rxjs/Rx';
 import { Response } from "@angular/http/src/static_response";
 @Injectable()
 export class DataService {
-    public financeData: Person[] = [];
+    public financeData = [];
     constructor(private http: HttpClient) {
     }
-    SendData(data: Person) {
+    SendData(data: any[]) {
+ 
         console.log(data);
-        this.financeData.push(data);
-        return this.http.put('https://ng-finance.firebaseio.com/data.json', this.financeData);
+        
+       // this.financeData.push();
+        return this.http.put('https://ng-finance.firebaseio.com/data.json', data);
     }
 
     GetFinanceData() {

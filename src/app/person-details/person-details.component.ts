@@ -9,24 +9,18 @@ import { Response, Http } from '@angular/http';
   styleUrls: ['./person-details.component.css']
 })
 export class PersonDetailsComponent implements OnInit {
-  public sendArray: any[];
-  public financeData = [
-    
-  ];
-  public persons: Person[]; 
+  public financeData = [];
+  public persons: Person[];
+
+  
   constructor(private dataservice: DataService) { }
 
+  
   ngOnInit() {
-    console.log('inside oninit');
-    this.dataservice.GetFinanceData().subscribe((data: Person[]) => {
-      console.log(data);  
+this.dataservice.GetFinanceData().subscribe((data: any[]) => {
       this.financeData = data;
     })
-
-    // this.persons = [
-    //   new Person("Parth", 2500),
-    //   new Person("Suyog", 3000)
-    // ]
-
   }
+
+  
 }

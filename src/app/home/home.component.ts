@@ -16,11 +16,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  onAddData(form: NgForm) {
-    console.log(form);
-    var toSave: Person = new Person(form.value.username, form.value.amount);
 
-    this.dataService.SendData(toSave)
+
+  public dummydata(form: NgForm) {
+    this.dataService.SendData(this.localdata)
       .subscribe(
       (response) => {
         console.log(response);
@@ -31,4 +30,25 @@ export class HomeComponent implements OnInit {
       );
   }
 
+  onAddData(form: NgForm) {
+
+    this.dataService.GetFinanceData().subscribe((data: any[]) => {
+      console.log('mydata : '+data)
+      this.localdata = [];
+      
+if(data!=null){
+  data.push(new Person(form.value.username, form.value.amount));
+  this.localdata = data;
+}
+else{
+  this.localdata.push(new Person(form.value.username, form.value.amount));    
+}
+    
+
+      this.dummydata(form);      
+    })
+
+
+
+  }
 }
