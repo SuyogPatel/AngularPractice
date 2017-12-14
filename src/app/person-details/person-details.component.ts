@@ -12,15 +12,13 @@ export class PersonDetailsComponent implements OnInit {
   public financeData = [];
   public persons: Person[];
 
-  
+
   constructor(private dataservice: DataService) { }
 
-  
+
   ngOnInit() {
-this.dataservice.GetFinanceData().subscribe((data: any[]) => {
+    this.dataservice.GetFinanceData().subscribe((data: any[]) => {
       this.financeData = data;
     })
   }
-
-  
 }

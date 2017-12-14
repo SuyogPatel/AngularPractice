@@ -18,7 +18,7 @@ export class DataService {
     }
 
     GetFinanceData() {
-        console.log('inside getdata');
+        console.log('inside getfinancedata');
         return this.http.get('https://ng-finance.firebaseio.com/data.json');
     }
 }

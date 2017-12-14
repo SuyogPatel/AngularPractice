@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './shared/data.service';
 import { AppRouttingModule } from './app.routingmodule';
 import { HttpClient } from '@angular/common/http';
-import { AoperationComponent } from './aoperation/aoperation.component';
+import { UpdateDetailsComponent } from './updatedetails/updatedetails.component';
 
 
 @NgModule({
@@ -19,10 +19,12 @@ import { AoperationComponent } from './aoperation/aoperation.component';
     HeaderComponent,
     PersonDetailsComponent,
     HomeComponent,
-    AoperationComponent
+    UpdateDetailsComponent
+    
   ],
   imports: [
-    BrowserModule,
+  
+  BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRouttingModule
