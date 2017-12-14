@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './shared/data.service';
 import { AppRouttingModule } from './app.routingmodule';
 import { HttpClient } from '@angular/common/http';
+import { AoperationComponent } from './aoperation/aoperation.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HttpClient } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     PersonDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    AoperationComponent
   ],
   imports: [
     BrowserModule,

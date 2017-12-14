@@ -12,10 +12,9 @@ import { Response } from '@angular/http';
 })
 export class HomeComponent implements OnInit {
   constructor(public dataService: DataService) { }
+  public localdata = [];
 
   ngOnInit() {
-
-
   }
   onAddData(form: NgForm) {
     console.log(form);
@@ -26,7 +25,7 @@ export class HomeComponent implements OnInit {
       (response) => {
         console.log(response);
         form.reset();
-        window.alert('Data has been saved successfully');
+        alert('Data has been saved successfully');
       },
       (error) => console.log(error)
       );
