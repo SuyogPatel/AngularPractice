@@ -1,4 +1,7 @@
 <br>
 <h3>Balance Sheet</h3>
+
+
 <br>
-<div class="list-group-item" *ngFor="let person of financeData "> {{ person.username}}({{ person.amount}})</div>
+<div class="list-group-item" *ngFor="let person of financeData;let i = index"> {{ person.username}}({{ person.amount}})<button class="btn btn-primary" (click) = "onDeleteDetail()">Delete</button></div>
+

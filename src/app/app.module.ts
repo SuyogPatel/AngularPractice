@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
-import { Routes} from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './shared/data.service';
 import { AppRouttingModule } from './app.routingmodule';
 import { HttpClient } from '@angular/common/http';
 import { UpdateDetailsComponent } from './updatedetails/updatedetails.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -19,17 +20,18 @@ import { UpdateDetailsComponent } from './updatedetails/updatedetails.component'
     HeaderComponent,
     PersonDetailsComponent,
     HomeComponent,
-    UpdateDetailsComponent
-    
+    UpdateDetailsComponent,
   ],
   imports: [
-  
-  BrowserModule,
+
+    BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRouttingModule
+    AppRouttingModule,
+    NgbModule.forRoot()
+    
   ],
-  providers: [DataService,HttpClient],
+  providers: [DataService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
