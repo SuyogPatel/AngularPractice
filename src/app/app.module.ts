@@ -1,14 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("84081328583-3l2tfs2crvoh5r4u7tjlp0pdqifcccqt.apps.googleusercontent.com")
+  }
+]);
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
-    BrowserModule,
+    SocialLoginModule.initialize(config),
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
