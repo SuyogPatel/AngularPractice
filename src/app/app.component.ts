@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-login";
-import { AuthService } from "angular4-social-login";
-import { SocialUser } from "angular4-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider,AuthService,SocialUser} from "angular4-social-login";
 
 @Component({
   selector: 'app-root',
@@ -25,6 +22,10 @@ export class AppComponent {
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFacebook(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signOut(): void {
